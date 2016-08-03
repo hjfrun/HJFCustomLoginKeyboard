@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  HJFCustomLoginKeyboardDemo
 //
-//  Created by HE Jianfeng on 16/8/3.
-//  Copyright © 2016年 贺剑峰. All rights reserved.
+//  Created by hjfrun on 16/8/3.
+//  Copyright © 2016年 hjfrun. All rights reserved.
 //
 
 #import "AppDelegate.h"

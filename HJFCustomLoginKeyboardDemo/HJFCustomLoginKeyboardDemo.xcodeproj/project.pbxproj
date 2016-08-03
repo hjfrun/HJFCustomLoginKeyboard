@@ -13,6 +13,31 @@
 		E18AAC3F1D52224400A4432A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC3D1D52224400A4432A /* Main.storyboard */; };
 		E18AAC411D52224400A4432A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC401D52224400A4432A /* Assets.xcassets */; };
 		E18AAC441D52224400A4432A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC421D52224400A4432A /* LaunchScreen.storyboard */; };
+		E18AAC5F1D5223F700A4432A /* HJFCustomKeyboardButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E18AAC501D5223F700A4432A /* HJFCustomKeyboardButton.m */; };
+		E18AAC601D5223F700A4432A /* HJFCustomLoginKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E18AAC521D5223F700A4432A /* HJFCustomLoginKeyboard.m */; };
+		E18AAC611D5223F700A4432A /* HJFCustomLoginKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC531D5223F700A4432A /* HJFCustomLoginKeyboard.xib */; };
+		E18AAC621D5223F700A4432A /* HJFKeyboardPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E18AAC551D5223F700A4432A /* HJFKeyboardPopView.m */; };
+		E18AAC631D5223F700A4432A /* HJFKeyboardPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC561D5223F700A4432A /* HJFKeyboardPopView.xib */; };
+		E18AAC641D5223F700A4432A /* HJFPunctuationTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E18AAC581D5223F700A4432A /* HJFPunctuationTabBar.m */; };
+		E18AAC651D5223F700A4432A /* HJFPunctuationTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E18AAC5A1D5223F700A4432A /* HJFPunctuationTabBarButton.m */; };
+		E18AAC661D5223F700A4432A /* HJFPunctuationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E18AAC5C1D5223F700A4432A /* HJFPunctuationView.m */; };
+		E18AAC6A1D5224E700A4432A /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E18AAC691D5224E700A4432A /* UIImage+ImageWithColor.m */; };
+		E18AAC7E1D52281000A4432A /* keyboard-click-1.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC6E1D52281000A4432A /* keyboard-click-1.aiff */; };
+		E18AAC7F1D52281000A4432A /* keyboard-click-2.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC6F1D52281000A4432A /* keyboard-click-2.aiff */; };
+		E18AAC801D52281000A4432A /* keyboard_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC701D52281000A4432A /* keyboard_back@2x.png */; };
+		E18AAC811D52281000A4432A /* keyboard_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC711D52281000A4432A /* keyboard_back@3x.png */; };
+		E18AAC821D52281000A4432A /* keyboard_case_lower@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC721D52281000A4432A /* keyboard_case_lower@2x.png */; };
+		E18AAC831D52281000A4432A /* keyboard_case_lower@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC731D52281000A4432A /* keyboard_case_lower@3x.png */; };
+		E18AAC841D52281000A4432A /* keyboard_case_upper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC741D52281000A4432A /* keyboard_case_upper@2x.png */; };
+		E18AAC851D52281000A4432A /* keyboard_case_upper@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC751D52281000A4432A /* keyboard_case_upper@3x.png */; };
+		E18AAC861D52281000A4432A /* keyboard_fold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC761D52281000A4432A /* keyboard_fold@2x.png */; };
+		E18AAC871D52281000A4432A /* keyboard_fold@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC771D52281000A4432A /* keyboard_fold@3x.png */; };
+		E18AAC881D52281000A4432A /* keyboard_pop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC781D52281000A4432A /* keyboard_pop@2x.png */; };
+		E18AAC891D52281000A4432A /* keyboard_pop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC791D52281000A4432A /* keyboard_pop@3x.png */; };
+		E18AAC8A1D52281000A4432A /* keyboard_pop_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC7A1D52281000A4432A /* keyboard_pop_left@2x.png */; };
+		E18AAC8B1D52281000A4432A /* keyboard_pop_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC7B1D52281000A4432A /* keyboard_pop_left@3x.png */; };
+		E18AAC8C1D52281000A4432A /* keyboard_pop_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC7C1D52281000A4432A /* keyboard_pop_right@2x.png */; };
+		E18AAC8D1D52281000A4432A /* keyboard_pop_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E18AAC7D1D52281000A4432A /* keyboard_pop_right@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +51,39 @@
 		E18AAC401D52224400A4432A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E18AAC431D52224400A4432A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E18AAC451D52224400A4432A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E18AAC4F1D5223F700A4432A /* HJFCustomKeyboardButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJFCustomKeyboardButton.h; sourceTree = "<group>"; };
+		E18AAC501D5223F700A4432A /* HJFCustomKeyboardButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJFCustomKeyboardButton.m; sourceTree = "<group>"; };
+		E18AAC511D5223F700A4432A /* HJFCustomLoginKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJFCustomLoginKeyboard.h; sourceTree = "<group>"; };
+		E18AAC521D5223F700A4432A /* HJFCustomLoginKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJFCustomLoginKeyboard.m; sourceTree = "<group>"; };
+		E18AAC531D5223F700A4432A /* HJFCustomLoginKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HJFCustomLoginKeyboard.xib; sourceTree = "<group>"; };
+		E18AAC541D5223F700A4432A /* HJFKeyboardPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJFKeyboardPopView.h; sourceTree = "<group>"; };
+		E18AAC551D5223F700A4432A /* HJFKeyboardPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJFKeyboardPopView.m; sourceTree = "<group>"; };
+		E18AAC561D5223F700A4432A /* HJFKeyboardPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HJFKeyboardPopView.xib; sourceTree = "<group>"; };
+		E18AAC571D5223F700A4432A /* HJFPunctuationTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJFPunctuationTabBar.h; sourceTree = "<group>"; };
+		E18AAC581D5223F700A4432A /* HJFPunctuationTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJFPunctuationTabBar.m; sourceTree = "<group>"; };
+		E18AAC591D5223F700A4432A /* HJFPunctuationTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJFPunctuationTabBarButton.h; sourceTree = "<group>"; };
+		E18AAC5A1D5223F700A4432A /* HJFPunctuationTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJFPunctuationTabBarButton.m; sourceTree = "<group>"; };
+		E18AAC5B1D5223F700A4432A /* HJFPunctuationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJFPunctuationView.h; sourceTree = "<group>"; };
+		E18AAC5C1D5223F700A4432A /* HJFPunctuationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJFPunctuationView.m; sourceTree = "<group>"; };
+		E18AAC671D5224D400A4432A /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		E18AAC681D5224E700A4432A /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
+		E18AAC691D5224E700A4432A /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
+		E18AAC6E1D52281000A4432A /* keyboard-click-1.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "keyboard-click-1.aiff"; sourceTree = "<group>"; };
+		E18AAC6F1D52281000A4432A /* keyboard-click-2.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "keyboard-click-2.aiff"; sourceTree = "<group>"; };
+		E18AAC701D52281000A4432A /* keyboard_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_back@2x.png"; sourceTree = "<group>"; };
+		E18AAC711D52281000A4432A /* keyboard_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_back@3x.png"; sourceTree = "<group>"; };
+		E18AAC721D52281000A4432A /* keyboard_case_lower@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_case_lower@2x.png"; sourceTree = "<group>"; };
+		E18AAC731D52281000A4432A /* keyboard_case_lower@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_case_lower@3x.png"; sourceTree = "<group>"; };
+		E18AAC741D52281000A4432A /* keyboard_case_upper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_case_upper@2x.png"; sourceTree = "<group>"; };
+		E18AAC751D52281000A4432A /* keyboard_case_upper@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_case_upper@3x.png"; sourceTree = "<group>"; };
+		E18AAC761D52281000A4432A /* keyboard_fold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_fold@2x.png"; sourceTree = "<group>"; };
+		E18AAC771D52281000A4432A /* keyboard_fold@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_fold@3x.png"; sourceTree = "<group>"; };
+		E18AAC781D52281000A4432A /* keyboard_pop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_pop@2x.png"; sourceTree = "<group>"; };
+		E18AAC791D52281000A4432A /* keyboard_pop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_pop@3x.png"; sourceTree = "<group>"; };
+		E18AAC7A1D52281000A4432A /* keyboard_pop_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_pop_left@2x.png"; sourceTree = "<group>"; };
+		E18AAC7B1D52281000A4432A /* keyboard_pop_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_pop_left@3x.png"; sourceTree = "<group>"; };
+		E18AAC7C1D52281000A4432A /* keyboard_pop_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_pop_right@2x.png"; sourceTree = "<group>"; };
+		E18AAC7D1D52281000A4432A /* keyboard_pop_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keyboard_pop_right@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +116,7 @@
 		E18AAC331D52224400A4432A /* HJFCustomLoginKeyboardDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E18AAC4C1D5223D000A4432A /* HJFCustomLoginKeyboard */,
 				E18AAC371D52224400A4432A /* AppDelegate.h */,
 				E18AAC381D52224400A4432A /* AppDelegate.m */,
 				E18AAC3A1D52224400A4432A /* ViewController.h */,
@@ -77,6 +136,55 @@
 				E18AAC351D52224400A4432A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E18AAC4C1D5223D000A4432A /* HJFCustomLoginKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E18AAC6D1D52281000A4432A /* keyboard resources */,
+				E18AAC671D5224D400A4432A /* Constant.h */,
+				E18AAC511D5223F700A4432A /* HJFCustomLoginKeyboard.h */,
+				E18AAC521D5223F700A4432A /* HJFCustomLoginKeyboard.m */,
+				E18AAC531D5223F700A4432A /* HJFCustomLoginKeyboard.xib */,
+				E18AAC4F1D5223F700A4432A /* HJFCustomKeyboardButton.h */,
+				E18AAC501D5223F700A4432A /* HJFCustomKeyboardButton.m */,
+				E18AAC541D5223F700A4432A /* HJFKeyboardPopView.h */,
+				E18AAC551D5223F700A4432A /* HJFKeyboardPopView.m */,
+				E18AAC561D5223F700A4432A /* HJFKeyboardPopView.xib */,
+				E18AAC571D5223F700A4432A /* HJFPunctuationTabBar.h */,
+				E18AAC581D5223F700A4432A /* HJFPunctuationTabBar.m */,
+				E18AAC591D5223F700A4432A /* HJFPunctuationTabBarButton.h */,
+				E18AAC5A1D5223F700A4432A /* HJFPunctuationTabBarButton.m */,
+				E18AAC5B1D5223F700A4432A /* HJFPunctuationView.h */,
+				E18AAC5C1D5223F700A4432A /* HJFPunctuationView.m */,
+				E18AAC681D5224E700A4432A /* UIImage+ImageWithColor.h */,
+				E18AAC691D5224E700A4432A /* UIImage+ImageWithColor.m */,
+			);
+			name = HJFCustomLoginKeyboard;
+			path = ../../HJFCustomLoginKeyboard;
+			sourceTree = "<group>";
+		};
+		E18AAC6D1D52281000A4432A /* keyboard resources */ = {
+			isa = PBXGroup;
+			children = (
+				E18AAC6E1D52281000A4432A /* keyboard-click-1.aiff */,
+				E18AAC6F1D52281000A4432A /* keyboard-click-2.aiff */,
+				E18AAC701D52281000A4432A /* keyboard_back@2x.png */,
+				E18AAC711D52281000A4432A /* keyboard_back@3x.png */,
+				E18AAC721D52281000A4432A /* keyboard_case_lower@2x.png */,
+				E18AAC731D52281000A4432A /* keyboard_case_lower@3x.png */,
+				E18AAC741D52281000A4432A /* keyboard_case_upper@2x.png */,
+				E18AAC751D52281000A4432A /* keyboard_case_upper@3x.png */,
+				E18AAC761D52281000A4432A /* keyboard_fold@2x.png */,
+				E18AAC771D52281000A4432A /* keyboard_fold@3x.png */,
+				E18AAC781D52281000A4432A /* keyboard_pop@2x.png */,
+				E18AAC791D52281000A4432A /* keyboard_pop@3x.png */,
+				E18AAC7A1D52281000A4432A /* keyboard_pop_left@2x.png */,
+				E18AAC7B1D52281000A4432A /* keyboard_pop_left@3x.png */,
+				E18AAC7C1D52281000A4432A /* keyboard_pop_right@2x.png */,
+				E18AAC7D1D52281000A4432A /* keyboard_pop_right@3x.png */,
+			);
+			path = "keyboard resources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,8 +213,9 @@
 		E18AAC291D52224400A4432A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HJF;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "贺剑峰";
+				ORGANIZATIONNAME = hjfrun;
 				TargetAttributes = {
 					E18AAC301D52224400A4432A = {
 						CreatedOnToolsVersion = 7.3;
@@ -137,8 +246,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				E18AAC441D52224400A4432A /* LaunchScreen.storyboard in Resources */,
+				E18AAC891D52281000A4432A /* keyboard_pop@3x.png in Resources */,
+				E18AAC851D52281000A4432A /* keyboard_case_upper@3x.png in Resources */,
 				E18AAC411D52224400A4432A /* Assets.xcassets in Resources */,
+				E18AAC8A1D52281000A4432A /* keyboard_pop_left@2x.png in Resources */,
+				E18AAC801D52281000A4432A /* keyboard_back@2x.png in Resources */,
+				E18AAC611D5223F700A4432A /* HJFCustomLoginKeyboard.xib in Resources */,
+				E18AAC811D52281000A4432A /* keyboard_back@3x.png in Resources */,
+				E18AAC871D52281000A4432A /* keyboard_fold@3x.png in Resources */,
+				E18AAC821D52281000A4432A /* keyboard_case_lower@2x.png in Resources */,
+				E18AAC7F1D52281000A4432A /* keyboard-click-2.aiff in Resources */,
+				E18AAC831D52281000A4432A /* keyboard_case_lower@3x.png in Resources */,
 				E18AAC3F1D52224400A4432A /* Main.storyboard in Resources */,
+				E18AAC8B1D52281000A4432A /* keyboard_pop_left@3x.png in Resources */,
+				E18AAC8C1D52281000A4432A /* keyboard_pop_right@2x.png in Resources */,
+				E18AAC861D52281000A4432A /* keyboard_fold@2x.png in Resources */,
+				E18AAC631D5223F700A4432A /* HJFKeyboardPopView.xib in Resources */,
+				E18AAC8D1D52281000A4432A /* keyboard_pop_right@3x.png in Resources */,
+				E18AAC841D52281000A4432A /* keyboard_case_upper@2x.png in Resources */,
+				E18AAC7E1D52281000A4432A /* keyboard-click-1.aiff in Resources */,
+				E18AAC881D52281000A4432A /* keyboard_pop@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +276,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18AAC651D5223F700A4432A /* HJFPunctuationTabBarButton.m in Sources */,
 				E18AAC3C1D52224400A4432A /* ViewController.m in Sources */,
+				E18AAC621D5223F700A4432A /* HJFKeyboardPopView.m in Sources */,
+				E18AAC661D5223F700A4432A /* HJFPunctuationView.m in Sources */,
+				E18AAC641D5223F700A4432A /* HJFPunctuationTabBar.m in Sources */,
+				E18AAC6A1D5224E700A4432A /* UIImage+ImageWithColor.m in Sources */,
+				E18AAC601D5223F700A4432A /* HJFCustomLoginKeyboard.m in Sources */,
 				E18AAC391D52224400A4432A /* AppDelegate.m in Sources */,
 				E18AAC361D52224400A4432A /* main.m in Sources */,
+				E18AAC5F1D5223F700A4432A /* HJFCustomKeyboardButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +434,7 @@
 				E18AAC4A1D52224400A4432A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
