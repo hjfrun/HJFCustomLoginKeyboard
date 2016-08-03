@@ -235,6 +235,7 @@
         [self.caseSwitchButton setTitle:nil forState:UIControlStateNormal];
         [self.caseSwitchButton setImage:[UIImage imageNamed:@"keyboard_case_lower"] forState:UIControlStateNormal];
         [self.caseSwitchButton setImage:[UIImage imageNamed:@"keyboard_case_upper"] forState:UIControlStateSelected];
+        self.caseSwitchButton.selected = NO;
         for (NSUInteger i = 0; i < letters.count; i++) {
             HJFCustomKeyboardButton *button = self.letterButtons[i];
             [button setTitle:letters[i] forState:UIControlStateNormal];

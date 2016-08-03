@@ -33,9 +33,11 @@
     
     [self.textView becomeFirstResponder];
     
+    // 控制器view上划打开键盘音效
     UISwipeGestureRecognizer *upSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(turnOnSound)];
     upSwipeGesture.direction = UISwipeGestureRecognizerDirectionUp;
     
+    // 控制器view上划关闭键盘音效
     UISwipeGestureRecognizer *downSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(turnOffSound)];
     downSwipeGesture.direction = UISwipeGestureRecognizerDirectionDown;
     
