@@ -59,7 +59,12 @@
 
 + (instancetype)keyboard
 {
-    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].firstObject;
+    NSArray *objects = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil];
+    
+    HJFCustomLoginKeyboard *keyboard = objects.firstObject;
+    keyboard.punctuationPanel = objects.lastObject;
+    
+    return keyboard;
 }
 
 /**
@@ -134,6 +139,11 @@
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = touches.anyObject;
+    
+    if (touch.view == self.punctuationPanel || touch.view.superview == self.punctuationPanel || touch.view.superview.superview == self.punctuationPanel) {
+        return;
+    }
+    
     CGPoint location = [touch locationInView:touch.view];
     HJFCustomKeyboardButton *btn = [self keyboardButtonWithLocation:location];
     
@@ -149,6 +159,11 @@
     [self.popView removeFromSuperview];
     
     UITouch *touch = touches.anyObject;
+    
+    if (touch.view == self.punctuationPanel || touch.view.superview == self.punctuationPanel || touch.view.superview.superview == self.punctuationPanel) {
+        return;
+    }
+    
     CGPoint location = [touch locationInView:touch.view];
     HJFCustomKeyboardButton *btn = [self keyboardButtonWithLocation:location];
     
@@ -273,7 +288,8 @@
 - (IBAction)caseSwitchClick:(HJFCustomKeyboardButton *)sender {
     [self playSoundEffect];
     if ([sender.currentTitle isEqualToString:@"更多"]) {
-        [self bringSubviewToFront:self.punctuationPanel];
+        self.punctuationPanel.frame = self.bounds;
+        [self addSubview:self.punctuationPanel];
         return;
     }
     sender.selected = !sender.isSelected;
@@ -290,7 +306,6 @@
 
 - (IBAction)removePunctuationView:(UIButton *)sender {
     [self.punctuationPanel removeFromSuperview];
-    self.punctuationPanel = nil;
     
     [self punctuationClick:self.punctuationButton];
     self.caseSwitchButton.selected = NO;
@@ -348,17 +363,6 @@
         _popView = [HJFKeyboardPopView popView];
     }
     return _popView;
-}
-
-
-- (UIView *)punctuationPanel
-{
-    if (_punctuationPanel == nil) {
-        _punctuationPanel = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class) owner:nil options:nil].lastObject;
-        _punctuationPanel.frame = self.bounds;
-        [self addSubview:_punctuationPanel];
-    }
-    return _punctuationPanel;
 }
 
 
