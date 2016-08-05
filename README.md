@@ -18,7 +18,35 @@
 * 给按键添加音效反馈；
 * 不同屏幕适配，4寸、4.7寸、5.5寸屏均能很好适配
 
+##### 安装方法
+* 手动安装，直接下载项目文件，将`HJFCustomLoginKeyboard`文件夹拖入到项目；
+* pod 安装，`pod 'HJFCustomLoginKeyboard'` 
 
+##### 使用方法
+导入`HJFCustomLoginKeyboard.h`头文件，实现代理以下代理方法。
+
+```objc
+
+/** 点击了普通按钮, 包括自负标点符号等 */
+- (void)customLoginKeyboard:(HJFCustomLoginKeyboard *)customLoginKeyboard didClickAtNormalButton:(HJFCustomKeyboardButton *)button;
+
+/** 点击了删除键 */
+- (void)customLoginKeyboardDidClickedDelete:(HJFCustomLoginKeyboard *)customLoginKeyboard;
+
+/** 点击了空格键 */
+- (void)customLoginKeyboardDidClickedSpace:(HJFCustomLoginKeyboard *)customLoginKeyboard;
+
+/** 点击了下一步按钮 */
+- (void)customLoginKeyboardDidClickedNextField:(HJFCustomLoginKeyboard *)customLoginKeyboard;
+
+/** 收起键盘 */
+- (void)customLoginKeyboardDidClickedFoldUpKeyboard:(HJFCustomLoginKeyboard *)customLoginKeyboard;
+
+/** 点击了符号面板上的标点符号 */
+- (void)customLoginKeyboard:(HJFCustomLoginKeyboard *)customLoginKeyboard didClickedAtPunctuation:(NSString *)punctuation;
+
+```
+具体详细的使用方法，demo里面有，可以看看。
 有什么好想法，欢迎提出。
 
 
