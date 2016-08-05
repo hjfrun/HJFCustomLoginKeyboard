@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "HJFCustomLoginKeyboard"
-    s.version      = “0.0.2”
+    s.version      = "0.0.2"
     s.summary      = "A Custom Keyboard Designed for Login Page."
     s.homepage     = "https://github.com/hjfrun/HJFCustomLoginKeyboard"
     s.license      = "MIT"
