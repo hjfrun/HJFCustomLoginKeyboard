@@ -48,6 +48,13 @@
 
 @property (nonatomic, strong) HJFCustomKeyboardButton *lastButton;
 
+@property (nonatomic, strong) UITouch *firstTouch;
+@property (nonatomic, strong) HJFCustomKeyboardButton *firstEndButton;
+@property (nonatomic, strong) HJFKeyboardPopView *firstPopView;
+
+@property (nonatomic, strong) UITouch *secondTouch;
+@property (nonatomic, strong) HJFCustomKeyboardButton *secondEndButton;
+@property (nonatomic, strong) HJFKeyboardPopView *secondPopView;
 
 @end
 
@@ -109,11 +116,8 @@
     UIImage *lightGrayBackgroundImage = [UIImage imageWithColor:[UIColor colorWithRed:170 / 255.f green:178 / 255.f blue:189 / 255.f alpha:.6f]];
 
     [self.backDeleteButton setBackgroundImage:whiteBackgroundImage forState:UIControlStateHighlighted];
-    
     [self.nextFieldButton setBackgroundImage:whiteBackgroundImage forState:UIControlStateHighlighted];
-    
     [self.foldUpKeyboardButton setBackgroundImage:whiteBackgroundImage forState:UIControlStateHighlighted];
-    
     [self.spaceButton setBackgroundImage:lightGrayBackgroundImage forState:UIControlStateHighlighted];
 }
 
@@ -132,33 +136,65 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    self.lastButton = nil;
-    [self touchesMoved:touches withEvent:event]; 
+    UITouch *touch = touches.anyObject;
+    NSLog(@"touchesBegan, index : %@", [touch valueForKeyPath:@"_pathIndex"]);
+    CGPoint location = [touch locationInView:touch.view];
+    if (self.firstTouch == nil) {
+        self.firstTouch = touch;
+        self.firstEndButton = nil;
+        
+        HJFCustomKeyboardButton *btn = [self keyboardButtonWithLocation:location];
+        if (btn) {
+            self.firstEndButton = btn;
+            self.firstPopView = [HJFKeyboardPopView popView];
+            [self.firstPopView showFromButton:btn];
+        }
+    } else {
+        self.secondTouch = touch;
+        self.secondEndButton = nil;
+        
+        HJFCustomKeyboardButton *btn = [self keyboardButtonWithLocation:location];
+        if (btn) {
+            self.secondEndButton = btn;
+            self.secondPopView = [HJFKeyboardPopView popView];
+            [self.secondPopView showFromButton:btn];
+        }
+    }
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = touches.anyObject;
-    
-    if (touch.view == self.punctuationPanel || touch.view.superview == self.punctuationPanel || touch.view.superview.superview == self.punctuationPanel) {
-        return;
-    }
-    
-    CGPoint location = [touch locationInView:touch.view];
-    HJFCustomKeyboardButton *btn = [self keyboardButtonWithLocation:location];
-    
-    if (btn) {
-        self.lastButton = btn;
-        [self.popView showFromButton:btn];
-    }
-    
+    [touches enumerateObjectsUsingBlock:^(UITouch * _Nonnull obj, BOOL * _Nonnull stop) {
+        CGPoint location = [obj locationInView:obj.view];
+        HJFCustomKeyboardButton *btn = [self keyboardButtonWithLocation:location];
+        
+        NSLog(@"touchesMoved, index : %@", [obj valueForKeyPath:@"_pathIndex"]);
+        if ([obj isEqual:self.firstTouch]) {
+            if (btn) {
+                self.firstEndButton = btn;
+                [self.firstPopView showFromButton:btn];
+                if (self.secondPopView && self.secondEndButton) {
+                    [self.secondPopView showFromButton:self.secondEndButton];
+                }
+            }
+        } else if ([obj isEqual:self.secondTouch]) {
+            if (btn) {
+                self.secondEndButton = btn;
+                [self.secondPopView showFromButton:btn];
+                if (self.firstPopView && self.firstEndButton) {
+                    [self.firstPopView showFromButton:self.firstEndButton];
+                }
+            }
+        }
+    }];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.popView removeFromSuperview];
-    
+    [self playSoundEffect];
     UITouch *touch = touches.anyObject;
+    
+    NSLog(@"touchesEnded, index : %@", [touch valueForKeyPath:@"_pathIndex"]);
     
     if (touch.view == self.punctuationPanel || touch.view.superview == self.punctuationPanel || touch.view.superview.superview == self.punctuationPanel) {
         return;
@@ -167,23 +203,50 @@
     CGPoint location = [touch locationInView:touch.view];
     HJFCustomKeyboardButton *btn = [self keyboardButtonWithLocation:location];
     
-    if (btn) {
-        [self playSoundEffect];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(customLoginKeyboard:didClickAtNormalButton:)]) {
-            [self.delegate customLoginKeyboard:self didClickAtNormalButton:btn];
+    if ([touch isEqual:self.firstTouch]) {
+        [self.firstPopView removeFromSuperview];
+        self.firstPopView = nil;
+        self.firstEndButton = nil;
+        self.firstTouch = nil;
+        
+        if (btn) {
+            if (self.delegate && [self.delegate respondsToSelector:@selector(customLoginKeyboard:didClickAtNormalButton:)]) {
+                [self.delegate customLoginKeyboard:self didClickAtNormalButton:btn];
+            }
+        } else if (self.firstEndButton) {
+            if (self.delegate && [self.delegate respondsToSelector:@selector(customLoginKeyboard:didClickAtNormalButton:)]) {
+                [self.delegate customLoginKeyboard:self didClickAtNormalButton:self.firstEndButton];
+            }
         }
-    } else if (self.lastButton) {
-        [self playSoundEffect];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(customLoginKeyboard:didClickAtNormalButton:)]) {
-            [self.delegate customLoginKeyboard:self didClickAtNormalButton:self.lastButton];
+    } else if ([touch isEqual:self.secondTouch]) {
+        [self.secondPopView removeFromSuperview];
+        self.secondPopView = nil;
+        self.secondEndButton = nil;
+        self.secondTouch = nil;
+        if (btn) {
+            if (self.delegate && [self.delegate respondsToSelector:@selector(customLoginKeyboard:didClickAtNormalButton:)]) {
+                [self.delegate customLoginKeyboard:self didClickAtNormalButton:btn];
+            }
+        } else if (self.secondEndButton) {
+            if (self.delegate && [self.delegate respondsToSelector:@selector(customLoginKeyboard:didClickAtNormalButton:)]) {
+                [self.delegate customLoginKeyboard:self didClickAtNormalButton:self.secondEndButton];
+            }
         }
     }
-    
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.popView removeFromSuperview];
+//    [self.popView removeFromSuperview];
+    [self.firstPopView removeFromSuperview];
+    self.firstPopView = nil;
+    self.firstTouch = nil;
+    self.firstEndButton = nil;
+    
+    [self.secondPopView removeFromSuperview];
+    self.secondPopView = nil;
+    self.secondTouch = nil;
+    self.secondEndButton = nil;
 }
 
 
